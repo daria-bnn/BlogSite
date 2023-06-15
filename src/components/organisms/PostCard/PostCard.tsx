@@ -30,7 +30,7 @@ const PostCard: FC<PostCardProps> = ({ post }) => {
   const [isOpenComments, setIsOpenComments] = useState(false)
 
   return (
-    <Card style={{ width: 'auto', alignItems: 'start' }} className="p-3">
+    <Card style={{ width: 'auto', alignItems: 'start', marginBottom: 32 }} className="p-3">
       <UserProfile
         nameUser={`user-${post.userId}`}
         widthAvatar={32}
