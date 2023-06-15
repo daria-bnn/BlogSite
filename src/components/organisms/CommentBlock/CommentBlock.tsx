@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { Comment } from '../../../utils/types'
 
-interface CommentProps {
+interface CommentBlockProps {
   comment: Comment
 }
 
-const Comment: FC<CommentProps> = ({ comment }) => (
+const CommentBlock: FC<CommentBlockProps> = ({ comment }) => (
   <div className="text-start">
     <a className="text-body-secondary fst-italic" href={comment.email}>
       {comment.email}
@@ -14,4 +14,4 @@ const Comment: FC<CommentProps> = ({ comment }) => (
   </div>
 )
 
-export default Comment
+export default CommentBlock
