@@ -4,7 +4,7 @@ import { Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Header = () => (
-  <Navbar collapseOnSelect expand="xs" bg="light" >
+  <Navbar collapseOnSelect expand="xs" >
     <Navbar.Toggle aria-controls="navbar"/>
     <Navbar.Offcanvas
       id="navbar"
