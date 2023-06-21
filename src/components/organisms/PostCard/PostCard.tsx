@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import React, { FC, useState } from 'react'
 import { Card, Collapse } from 'react-bootstrap'
 import { Post } from '../../../utils/types'
 import ButtonCollapse from '../../atoms/ButtonCollapse/ButtonCollapse'
@@ -24,18 +24,19 @@ const mockComments = [
 
 interface PostCardProps {
   post: Post
+  id: string
 }
 
-const PostCard: FC<PostCardProps> = ({ post }) => {
+const PostCard: FC<PostCardProps> = React.memo(({ post }) => {
   const [isOpenComments, setIsOpenComments] = useState(false)
 
   return (
-    <Card style={{ width: 'auto', alignItems: 'start', marginBottom: 32 }} className="p-3">
-      <UserProfile
-        nameUser={`user-${post.userId}`}
-        widthAvatar={32}
-        fontSize={6}
-      />
+    <Card
+      id={post.id.toString()}
+      style={{ width: 'auto', alignItems: 'start', marginBottom: 32 }}
+      className="p-3"
+    >
+      <UserProfile nameUser={`user-${post.id}`} widthAvatar={32} fontSize={6} />
       <Card.Body className="p-0">
         <Card.Title className="text-start">{post.title}</Card.Title>
         <Card.Text className="text-start">{post.body}</Card.Text>
@@ -58,6 +59,6 @@ const PostCard: FC<PostCardProps> = ({ post }) => {
       </Collapse>
     </Card>
   )
-}
+})
 
 export default PostCard
