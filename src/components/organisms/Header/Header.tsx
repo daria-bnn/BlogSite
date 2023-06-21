@@ -3,7 +3,7 @@ import { Nav, Navbar, Offcanvas } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const Header = () => (
+const Header = React.memo(() => (
   <Navbar collapseOnSelect expand="xs" >
     <Navbar.Toggle aria-controls="navbar"/>
     <Navbar.Offcanvas
@@ -22,6 +22,6 @@ const Header = () => (
       </Offcanvas.Body>
     </Navbar.Offcanvas>
   </Navbar>
-)
+))
 
 export default Header

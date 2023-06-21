@@ -5,10 +5,10 @@ interface TitleProps {
   title: string
 }
 
-const PageTitle: FC<TitleProps> = ({ title }) => (
+const PageTitle: FC<TitleProps> = React.memo(({ title }) => (
   <Navbar bg="transparent" variant="primary">
     <Navbar.Brand>{title}</Navbar.Brand>
   </Navbar>
-)
+))
 
 export default PageTitle
